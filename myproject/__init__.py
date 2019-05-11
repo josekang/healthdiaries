@@ -1,8 +1,7 @@
 import os
-from flask import Flask
+from flask import Blueprint, Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
