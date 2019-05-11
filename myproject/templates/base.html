@@ -136,7 +136,7 @@ s0.parentNode.insertBefore(s1,s0);
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#" style="font-family: 'Raleway', sans-serif;">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url_for('index') }}" style="font-family: 'Raleway', sans-serif;">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#about" style="font-family: 'Raleway', sans-serif;">About</a>
@@ -160,12 +160,12 @@ s0.parentNode.insertBefore(s1,s0);
             Nutrition Programme
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#" style="font-family: 'Raleway', sans-serif;">Child Immunization</a>
-          <a class="dropdown-item" href="#" style="font-family: 'Raleway', sans-serif;">Maternal Nutrition Knowledge</a>
-          <a class="dropdown-item" href="#" style="font-family: 'Raleway', sans-serif;">Food Consistency</a>
-          <a class="dropdown-item" href="#" style="font-family: 'Raleway', sans-serif;">Meal Frequency</a>
-          <a class="dropdown-item" href="#" style="font-family: 'Raleway', sans-serif;">Amount Of Complementary Food Needed</a>
-          <a class="dropdown-item" href="#" style="font-family: 'Raleway', sans-serif;">Use Of Vitamin - Minerals Supplementation</a>
+          <a class="dropdown-item" href="{{ url_for('child') }}" style="font-family: 'Raleway', sans-serif;">Child Immunization</a>
+          <a class="dropdown-item" href="{{ url_for('matnut') }}" style="font-family: 'Raleway', sans-serif;">Maternal Nutrition Knowledge</a>
+          <a class="dropdown-item" href="{{ url_for('foodcon') }}" style="font-family: 'Raleway', sans-serif;">Food Consistency</a>
+          <a class="dropdown-item" href="{{ url_for('mealfreq') }}" style="font-family: 'Raleway', sans-serif;">Meal Frequency</a>
+          <a class="dropdown-item" href="{{ url_for('amocfcfn') }}" style="font-family: 'Raleway', sans-serif;">Amount Of Complementary Food Needed</a>
+          <a class="dropdown-item" href="{{ url_for('useofvit') }}" style="font-family: 'Raleway', sans-serif;">Use Of Vitamin - Minerals Supplementation</a>
         </div>
       </li>
 

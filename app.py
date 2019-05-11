@@ -21,6 +21,30 @@ def twelvetwentyfour():
 def twentyfivefiftynine():
     return render_template("25-59.html")
 
+@app.route("/child")
+def child():
+    return render_template("child.html")
+
+@app.route("/matnut")
+def matnut():
+    return render_template("matnut.html")
+
+@app.route("/foodcon")
+def foodcon():
+    return render_template("foodcon.html")
+
+@app.route("/mealfreq")
+def mealfreq():
+    return render_template("mealfreq.html")
+
+@app.route("/amocfcfn")
+def amocfcfn():
+    return render_template("amocfcfn.html")
+
+@app.route("/useofvit")
+def useofvit():
+    return render_template("useofvit.html")
+
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
