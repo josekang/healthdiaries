@@ -29,10 +29,6 @@ def child():
 def matnut():
     return render_template("matnut.html")
 
-@app.route("/foodcon")
-def foodcon():
-    return render_template("foodcon.html")
-
 @app.route("/mealfreq")
 def mealfreq():
     return render_template("mealfreq.html")
@@ -44,6 +40,10 @@ def amocfcfn():
 @app.route("/useofvit")
 def useofvit():
     return render_template("useofvit.html")
+
+@app.route("/ggp")
+def ggp():
+    return render_template("ggp.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
