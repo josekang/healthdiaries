@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h5>Please enter the correct credentials to access the adoption site.</h5>
+  {% if success%}
+  <p>You have logged in Successfully</p>
+  {% else %}
+  {% for message in form.email.errors %}
+  <div class="flash alert alert-danger">{{ message }}</div>
+  {% endfor %}
+  {% for message in form.password.errors %}
+  <div class="flash alert alert-danger">{{ message }}</div>
+  {% endfor %}
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}
+    {{ form.password.label(class="form-control-plaintext") }}{{ form.password(class="col-sm-2 col-form-label") }}<br>
+    {{ form.submit(class="btn btn-primary") }}
+
+  </form>
+  {% endif %}
+
+</div>
+{% endblock%}

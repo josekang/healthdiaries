@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h5>Please ensure to enter the legitimate credentials inorder for a sincere feedback and right information.</h5>
+  {% if success %}
+  <p>Thank your for registering with us. We hope our services suite your needs</p>
+  {% else %}
+  {% for message in form.email.errors %}
+  <div class="flash alert alert-danger">{{ message }}</div>
+  {% endfor%}
+  {% for message in form.username.errors %}
+  <div class="flash alert alert-danger">{{ message }}</div>
+  {% endfor%}
+  {% for message in form.password.errors %}
+  <div class="flash alert alert-danger">{{ message }}</div>
+  {% endfor%}
+  {% for message in form.confirm_password.errors %}
+  <div class="flash alert alert-danger">{{ message }}</div>
+  {% endfor%}
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}<br>
+    {{ form.username.label(class="form-control-plaintext") }}{{ form.username(class="col-sm-2 col-form-label") }}<br>
+    {{ form.password.label(class="form-control-plaintext") }}{{ form.password(class="col-sm-2 col-form-label") }}<br>
+    {{ form.confirm_password.label(class="form-control-plaintext") }}{{ form.confirm_password(class="col-sm-2 col-form-label") }}<br>
+    {{ form.submit(class="btn btn-primary") }}
+
+  </form>
+  {% endif %}
+
+</div>
+{% endblock %}
