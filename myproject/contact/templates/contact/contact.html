@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h2 style="font-family: 'Raleway', sans-serif; font-weight : bold;">GET IN TOUCH</h2>
+  <img src="contact/static/co/co1.png" alt="">
+  {% if success %}
+  <p style="font-family: 'Raleway', sans-serif; font-weight : bold;">Thank you for contacting us.
+    We will get back to you shortly. Stay happy-:)</p>
+  <a  href="{{ url_for('index') }}" class="btn btn-outline-success active" role="button"
+  aria-pressed="true" style="font-family: 'Raleway', sans-serif; font-weight : bold; margin-left:500px;">Return to homepage</a>
+  {% else %}
+    {% for message in form.name.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.email.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.subject.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.message.errors %}
+    <div class="flash alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    <p style="font-family: 'Raleway', sans-serif; font-weight : bold;">Have a little something, something you wanna talk to
+      us about?Well give us a ring, send us an email, or fill out that nifty form below. Keep your child healthy</p>
+
+<div class="" style="margin-left:200px;">
+
+  <form action="{{ url_for('contact.contact') }}" method="POST">
+    <h5 style="font-family: 'Raleway', sans-serif; font-weight : bold; float:right; margin-right:550px;">Other Contact Information:</h5><br>
+
+    <p style="font-family: 'Raleway', sans-serif; font-weight : bold; float:right; margin-right:-570px;">Phone Number : +254 795 327 611 <br>
+    <br>Email us: <span style="color:blue; font-style:italic;">arigabrian.5@gmail.com </span><br><br>
+    Telephone Number : <span style="color:blue; font-style:italic;">+254 780-940-885 </span><br><br>
+    Follow Us on Twitter : <span style="color:blue; font-style:italic;">@InfTodForum </span><br><br>
+    Follow Us on Facebook : <span style="color:blue; font-style:italic;">facebook.com/ChildFeedingGuide/</span><br><br>
+    Follow Us on Google+ : <span style="color:blue; font-style:italic;">draxe.com/nutrition/article/nutrition-for-babies/</span><br><br>
+    Follow Us on LinkdIn : <span style="color:blue; font-style:italic;">linkedin.com/company/baby-nutrition-limited/about/</span><br><br>
+    Follow Us on Instagram :<span style="color:blue; font-style:italic;">@healthy.pregnancy/</span><br><br>
+    Follow Us on pinterest : <span style="color:blue; font-style:italic;">pinterest.com/weelicious/baby-food-recipes/</span><br><br></p>
+
+    {{ form.hidden_tag() }}
+    {{ form.name.label(class="form-control-plaintext") }}{{ form.name(class="col-sm-2 col-form-label") }}
+    {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}
+    {{ form.subject.label(class="form-control-plaintext") }}{{ form.subject(class="col-sm-2 col-form-label") }}
+    {{ form.message.label(class="form-control-plaintext") }}{{ form.message(class="col-sm-2 col-form-label") }}<br>
+    {{ form.submit(class="btn btn-primary") }}
+
+  </form>
+
+</div>
+
+  {% endif %}
+</div>
+{% endblock %}
