@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron">
-  <h5>Please ensure to enter the legitimate credentials inorder for a sincere feedback and right information.</h5>
+  <h5 style="font-family: 'Raleway', sans-serif; margin-left:40px;">Please ensure to enter the legitimate credentials in
+    order for a sincere feedback and right information.</h5><br>
+    <p style="font-family: 'Raleway', sans-serif; margin-left:70px;"><span style="font-weight:bold;">NOTE:</span> Once you have
+    registered you'll have continous access to my health diary site resource library via the username and password you choose.<br>
+  <span style="margin-left:100px;">We'll send you brief announcements when fresh content is posted on the site. As always, we respect
+ your privacy.</span> <br><span style="margin-left:300px;">We do not share any personal information.</span></p>
   {% if success %}
   <p>Thank your for registering with us. We hope our services suite your needs</p>
   {% else %}
@@ -17,15 +22,21 @@
   {% for message in form.confirm_password.errors %}
   <div class="flash alert alert-danger">{{ message }}</div>
   {% endfor%}
-  <form method="post">
-    {{ form.hidden_tag() }}
-    {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}<br>
-    {{ form.username.label(class="form-control-plaintext") }}{{ form.username(class="col-sm-2 col-form-label") }}<br>
-    {{ form.password.label(class="form-control-plaintext") }}{{ form.password(class="col-sm-2 col-form-label") }}<br>
-    {{ form.confirm_password.label(class="form-control-plaintext") }}{{ form.confirm_password(class="col-sm-2 col-form-label") }}<br>
-    {{ form.submit(class="btn btn-primary") }}
 
-  </form>
+  <div class="" style="margin-left:430px;">
+
+    <form method="post">
+      {{ form.hidden_tag() }}
+      {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}<br>
+      {{ form.username.label(class="form-control-plaintext") }}{{ form.username(class="col-sm-2 col-form-label") }}<br>
+      {{ form.password.label(class="form-control-plaintext") }}{{ form.password(class="col-sm-2 col-form-label") }}<br>
+      {{ form.confirm_password.label(class="form-control-plaintext") }}{{ form.confirm_password(class="col-sm-2 col-form-label") }}<br>
+      {{ form.submit(class="btn btn-primary") }}
+
+    </form>
+
+  </div>
+
   {% endif %}
 
 </div>

@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron">
-  <h5>You have Successfully logged in to our puppy survey site</h5>
+  <h5 style="font-family: 'Raleway', sans-serif;">You have Successfully signed up to our health diaries site. We hope you enjoy your stay with us.
+     Take a tour by clicking the button below</h5>
+
+     <a href="{{ url_for('index') }}" class="btn btn-outline-success active" role="button"
+     aria-pressed="true" style="font-family: 'Raleway', sans-serif; font-weight : bold; margin-left:500px;">Take a Tour</a>
 
 </div>
 {% endblock%}

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron">
-  <h5>Please enter the correct credentials to access the adoption site.</h5>
+  <h5 style="font-family: 'Raleway', sans-serif; margin-left:40px;">Please enter the correct credentials to access the health diaries site.
+  We appreciate the time you take to visit us.</h5> <br>
+  <h5 style="font-family: 'Raleway', sans-serif; margin-left:150px;">Any comments, query or suggestion you can send us through the contact page</h5>
   {% if success%}
   <p>You have logged in Successfully</p>
   {% else %}
@@ -11,13 +13,22 @@
   {% for message in form.password.errors %}
   <div class="flash alert alert-danger">{{ message }}</div>
   {% endfor %}
-  <form method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}
-    {{ form.password.label(class="form-control-plaintext") }}{{ form.password(class="col-sm-2 col-form-label") }}<br>
-    {{ form.submit(class="btn btn-primary") }}
 
-  </form>
+  <div class="" style="margin-left:450px;">
+
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.email.label(class="form-control-plaintext") }}{{ form.email(class="col-sm-2 col-form-label") }}
+      {{ form.password.label(class="form-control-plaintext") }}{{ form.password(class="col-sm-2 col-form-label") }}<br><br>
+      {{ form.submit(class="btn btn-primary") }}
+
+    </form>
+
+  </div><br>
+
+  <p style="font-family: 'Raleway', sans-serif; margin-left:340px;">Not registered? kindly click here to
+  <a href="{{ url_for('user.register')}}">SignUp</a></p>
+
   {% endif %}
 
 </div>
