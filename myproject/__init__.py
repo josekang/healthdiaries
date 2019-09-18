@@ -27,13 +27,12 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config.update(dict(
     DEBUG = True,
     MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = 587,
-    MAIL_USE_TLS = True,
-    MAIL_USE_SSL = False,
-    MAIL_USERNAME = "arigabrian.5@gmail.com",
-    MAIL_PASSWORD = "857036bc",
+    MAIL_PORT = 465,
+    MAIL_USE_TLS = False,
+    MAIL_USE_SSL = True,
+    MAIL_USERNAME = 'arigabrian.5@gmail.com',
+    MAIL_PASSWORD = '857036bc',
 ))
-
 mail = Mail(app)
 
 
