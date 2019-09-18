@@ -5,6 +5,12 @@ from flask_migrate import Migrate
 from flask_mail import Mail, Message
 from flask_login import LoginManager
 
+import sys
+import logging
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
+
 login_manager = LoginManager()
 
 mail = Mail()
