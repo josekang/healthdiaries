@@ -24,16 +24,16 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # app.config["MAIL_USERNAME"] = "arigabrian.5@gmail.com"
 # app.config["MAIL_PASSWORD"] = "857036bc"
 
-mail_settings = {
-    "MAIL_SERVER": 'smtp.gmail.com',
-    "MAIL_PORT": 465,
-    "MAIL_USE_TLS": False,
-    "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": 'arigabrian.5@gmail.com',
-    "MAIL_PASSWORD": '857036bc'
-}
+app.config.update(dict(
+    DEBUG = True,
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = 'arigabrian.5@gmail.com',
+    MAIL_PASSWORD = '857036bc',
+))
 
-app.config.update(mail_settings)
 mail = Mail(app)
 
 
