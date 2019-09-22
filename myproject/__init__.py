@@ -30,8 +30,6 @@ db = SQLAlchemy(app)
 
 Migrate(app, db)
 
-# mail.__init__(app)
-
 login_manager.__init__(app)
 login_manager.login_view = "login"
 
