@@ -22,7 +22,7 @@ app.config["MAIL_PORT"] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config["MAIL_USE_SSL"] = False
 app.config["MAIL_USERNAME"] = "arigabrian.5@gmail.com"
-app.config["MAIL_PASSWORD"] = "857036bc"
+app.config["MAIL_PASSWORD"] = ""
 
 mail.__init__(app)
 
