@@ -18,9 +18,9 @@ app.config["SECRET_KEY"] = "@#$!@#$%^&*SERTTYBHKJBHFC!@#$%^&*()*&^<%1 id=@QWESDF
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "data.sqlite")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
-app.config["MAIL_PORT"] = 465
-app.config['MAIL_USE_TLS'] = False
-app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_PORT"] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config["MAIL_USE_SSL"] = False
 app.config["MAIL_USERNAME"] = "arigabrian.5@gmail.com"
 app.config["MAIL_PASSWORD"] = "857036bc"
 
